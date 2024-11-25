@@ -7,5 +7,6 @@ Volatility - degree of variation in an asset's price over time. High Volatility 
 
 Volatility Clustering - Tendencies of High Volatility followed by Low Volatility 
 
-Variance of Returns - $\frac{1}{n} \sum_{i=1}^n{(R_i-\bar{R})}^2$
+Variance of Returns = $\frac{1}{n} \sum_{i=1}^n{(R_i-\bar{R})}^2$
 
+Use Logaritmic Returns = $R_t=\ln{\frac{P_t}{P_{t-1}}}$
