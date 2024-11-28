@@ -30,6 +30,21 @@ $\epsilon =$ Error Residual From previous time step
 $\alpha + \beta$ represent persistence of volatility meaning closer they are to 1 the higher the volatility is present. so if less than 1 then volatility returns to $\omega$
 
 ## Applying Garch
-Collect Minute by Minute Data of the last 14 or 30 days from the election of Returns
+### Step 1. Data Collection and Storage
+1. Collect Minute by Minute Data of the last 30 days from the election (Oct 5 - Nov 5) of Price using Binance API or get historical data
+2. Compute the returns too
+    1. Store values in form of a struct in a data file vector<dataPoint>
+          ```cpp
+              struct dataPoint{
+                int month, day, hour, minute;
+                double bitcoinPrice;
+                double returns;
+              };
+          ```
+3. Plot the Returns on a line graph to visualize high and low volatility
+### Step 2. Test the Data 
+1. Stationarity Test Augmented Dickey Fuller
+    1. Goal - Determines if the time series is stationary 
+    2. Maths
+2. 
 
-Plot the return 
