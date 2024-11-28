@@ -44,15 +44,19 @@ $\alpha + \beta$ represent persistence of volatility meaning closer they are to 
 3. Plot the Returns on a line graph to visualize high and low volatilites
 ### Step 2. Test the Data 
 1. Autocorrelation Analysis
-        1. $ACF(k)=\frac{\sum_{t=k+1}^T(y_t-\bar y)(y_{t-k}-\bar y)}{\sum_{t=1}^T{(y_t - \bar y)}^2}$
-               1. $y_t$ value of the series at time t
-               2. $\bar y$ mean of the series
-               3. k lag
-        2. Do this for lag of $0,1,2,3...60$. If the $|ACF(k)| \ge \pm 1.96 \sqrt(T)$ it suggests a signficiant correlation at lag k
-        3. If possible lets graph this with also the right side of inequality as one line to see the correlation. Axis: (lag k, ACF(k))
+    1. $ACF(k)=\frac{\sum_{t=k+1}^T(y_t-\bar y)(y_{t-k}-\bar y)}{\sum_{t=1}^T{(y_t - \bar y)}^2}$
+        1. $y_t$ value of the series at time t
+        2. $\bar y$ mean of the series
+        3. k lag
+    2. Do this for lag of $0,1,2,3...60$. If the $|ACF(k)| \ge \pm 1.96 \sqrt(T)$ it suggests a signficiant correlation at lag k
+    3. If possible lets graph this with also the right side of inequality as one line to see the correlation. Axis: (lag k, ACF(k))
 ### Step 3. GARCH Model
 1. Fit a GARCH(1,1) model to estimate and predict volatility
 2. Mathematical $\sigma_t^2=\omega+\alpha*\epsilon_{t-1}^2+\beta*\omega_{t-1}^2$
-        1.Assign $\omega=0.01$, $\alpha=0.1$, $\beta = 0.85$
-        2. $\sum_0^2 = Var(r_t)$
+    1. Assign $\omega=0.01$, $\alpha=0.1$, $\beta = 0.85$
+    2. $\sigma_0^2 = Var(r_t)$
+    3. $e_t \textasciitilde N(0, \sigma _t^2)$
+    4. Store all the variances based on model
+### Step 4. Forecasting
+
 
