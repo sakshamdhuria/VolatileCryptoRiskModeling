@@ -16,3 +16,4 @@ int main() {
 
 
 //reference paper for data avail and etc: https://arxiv.org/html/2405.12988v1
+    // granularity of data
