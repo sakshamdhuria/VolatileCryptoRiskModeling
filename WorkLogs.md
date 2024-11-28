@@ -60,7 +60,7 @@ $\alpha + \beta$ represent persistence of volatility meaning closer they are to 
     4. Store all the variances based on model
 ### Step 4. Forecasting
 1. One step ahead Forecasting - $\sigma_{t+1}^2 = \omega+\alpha*\epsilon_t^2+\beta*\sigma_t^2$
-
+2. Start with $\sigma_0^2=Var(r_t)$
 
 # Nov 25th Seung-min Yu
 
