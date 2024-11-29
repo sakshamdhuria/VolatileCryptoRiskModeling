@@ -56,11 +56,11 @@ $\alpha + \beta$ represent persistence of volatility meaning closer they are to 
 2. Mathematical $\sigma_t^2=\omega+\alpha*\epsilon_{t-1}^2+\beta*\omega_{t-1}^2$
     1. Assign $\omega=0.01$, $\alpha=0.1$, $\beta = 0.85$
     2. $\sigma_0^2 = Var(r_t)$
-    3. $e_t \textasciitilde N(0, \sigma _t^2)$
+    3. $e_t \textasciitilde N(0, \sigma _t^2) = y_t-\mu$
     4. Store all the variances based on model
 ### Step 4. Forecasting
-
-
+1. One step ahead Forecasting - $\sigma_{t+1}^2 = \omega+\alpha*\epsilon_t^2+\beta*\sigma_t^2$
+2. Start with $\sigma_0^2=Var(r_t)$
 
 # Nov 25th Seung-min Yu
 
