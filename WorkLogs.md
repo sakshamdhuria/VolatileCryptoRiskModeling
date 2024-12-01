@@ -1,3 +1,8 @@
+# Dec 1st Yijun:
+
+upload presentation slides
+slide link: https://docs.google.com/presentation/d/1Kt_2Gl56Jo87mZmZWoMJRLoHvzGIbVSMc4lp8nnDthQ/edit?usp=sharing
+
 # Nov 25th Saksham:
 
 ## Breaking Down this Project -
