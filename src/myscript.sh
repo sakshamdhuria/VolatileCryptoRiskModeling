@@ -2,7 +2,7 @@
 
 #SBATCH -p instruction
 #SBATCH -t 0-00:30:00
-#SBATCH -J P6
+#SBATCH -J CryptoAnalysis
 #SBATCH -o output-%j.out
 #SBATCH -e output-%j.err
 #SBATCH --mem=2G
@@ -16,10 +16,17 @@ make
 echo "Done Compilation"
 
 
+echo "Starting Runs:"
 
-echo "Run:"
-./crypto_analysis 1
-echo "Done Run"
+# Loop through the desired thread counts
+for threads in 1 2 4 8; do
+    echo "Running with $threads threads:"
+    ./crypto_analysis $threads
+    echo "Done Run with $threads threads"
+    echo "-----------------------------------"
+done
+
+echo "All Runs Completed."
 
 echo "Clean:"
 make clean

@@ -134,7 +134,6 @@ int main(int argc, char* argv[]) {
     // Set the number of threads
     omp_set_num_threads(num_threads);
 
-    std::cout<<numThreads<<" Threads"<<std::endl;
     std::string filename = "bitcoin_data.csv";
     std::string outputFile = "processed_data.csv";
 
