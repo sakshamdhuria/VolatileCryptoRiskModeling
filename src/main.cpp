@@ -121,9 +121,20 @@ void benchmarkGARCH(const std::vector<dataPoint>& data, double omega, double alp
               << std::chrono::duration<double, std::milli>(endOMP - startOMP).count()
               << " ms\n";
 }
+int main(int argc, char* argv[]) {
+    // Check if the user provided the number of threads as an argument
+    if (argc < 2) {
+        std::cerr << "Usage: " << argv[0] << " <num_threads>\n";
+        return 1;
+    }
 
-int main() {
-    omp_set_num_threads(8);
+    // Convert the argument to an integer
+    int num_threads = std::stoi(argv[1]);
+    std::cout << "Number of threads set to: " << num_threads << std::endl;
+    // Set the number of threads
+    omp_set_num_threads(num_threads);
+
+    std::cout<<numThreads<<" Threads"<<std::endl;
     std::string filename = "bitcoin_data.csv";
     std::string outputFile = "processed_data.csv";
 
