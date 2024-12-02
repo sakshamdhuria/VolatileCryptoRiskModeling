@@ -1,0 +1,122 @@
+Compilation:
+g++                    -std=c++17 -O2 -fopenmp  -c main.cpp -o main.o
+g++                    -std=c++17 -O2 -fopenmp  -c DataCollection.cpp -o DataCollection.o
+g++                    -std=c++17 -O2 -fopenmp  -c DataCollectionParallel.cpp -o DataCollectionParallel.o
+g++                    -std=c++17 -O2 -fopenmp  -c DataAnalysis.cpp -o DataAnalysis.o
+g++                    -std=c++17 -O2 -fopenmp  -c DataAnalysisParallel.cpp -o DataAnalysisParallel.o
+g++                    -std=c++17 -O2 -fopenmp  -c GARCHModel.cpp -o GARCHModel.o
+g++                    -std=c++17 -O2 -fopenmp  -c GARCHModelParallel.cpp -o GARCHModelParallel.o
+nvcc                  -std=c++17 -O2          -c DataCollectionCUDA.cu -o DataCollectionCUDA.o
+nvcc                  -std=c++17 -O2          -c DataAnalysisCUDA.cu -o DataAnalysisCUDA.o
+nvcc                  -std=c++17 -O2          -c GARCHModelCUDA.cu -o GARCHModelCUDA.o
+g++                    -std=c++17 -O2 -fopenmp  main.o DataCollection.o DataCollectionParallel.o DataAnalysis.o DataAnalysisParallel.o GARCHModel.o GARCHModelParallel.o DataCollectionCUDA.o DataAnalysisCUDA.o GARCHModelCUDA.o -o crypto_analysis -lcuda -lcudart          
+Done Compilation
+Starting Runs:
+Running with 1 threads:
+Number of threads set to: 1
+Serial Data Collection Time: 1613.26 ms
+
+Benchmarking Compute Returns:
+ - Serial Compute Time: 9.66055 ms
+ - CUDA Compute Time: 522.577 ms
+ - OpenMP Compute Time: 11.0769 ms
+Data successfully saved to processed_data.csv.
+Details about the collected data:
+ - Total data points: 1005641
+ - Average price: $40256.26
+ - Maximum price: $73794.00
+ - Minimum price: $15500.00
+
+Benchmarking Data Analysis (ACF Computation):
+ - Serial ACF Compute Time: 66.70 ms
+ - CUDA ACF Compute Time: 142.17 ms
+ - OpenMP ACF Compute Time: 67.54 ms
+
+Benchmarking GARCH Model:
+ - Serial GARCH Calculation Time: 3.42 ms
+ - CUDA GARCH Calculation Time: 14.04 ms
+ - OpenMP GARCH Calculation Time: 4.10 ms
+Done Run with 1 threads
+-----------------------------------
+Running with 2 threads:
+Number of threads set to: 2
+Serial Data Collection Time: 1139.58 ms
+
+Benchmarking Compute Returns:
+ - Serial Compute Time: 9.66492 ms
+ - CUDA Compute Time: 395.71 ms
+ - OpenMP Compute Time: 8.58486 ms
+Data successfully saved to processed_data.csv.
+Details about the collected data:
+ - Total data points: 1005641
+ - Average price: $40256.26
+ - Maximum price: $73794.00
+ - Minimum price: $15500.00
+
+Benchmarking Data Analysis (ACF Computation):
+ - Serial ACF Compute Time: 66.52 ms
+ - CUDA ACF Compute Time: 135.52 ms
+ - OpenMP ACF Compute Time: 63.40 ms
+
+Benchmarking GARCH Model:
+ - Serial GARCH Calculation Time: 3.41 ms
+ - CUDA GARCH Calculation Time: 11.49 ms
+ - OpenMP GARCH Calculation Time: 2.62 ms
+Done Run with 2 threads
+-----------------------------------
+Running with 4 threads:
+Number of threads set to: 4
+Serial Data Collection Time: 1132.83 ms
+
+Benchmarking Compute Returns:
+ - Serial Compute Time: 9.59073 ms
+ - CUDA Compute Time: 424.988 ms
+ - OpenMP Compute Time: 8.35243 ms
+Data successfully saved to processed_data.csv.
+Details about the collected data:
+ - Total data points: 1005641
+ - Average price: $40256.26
+ - Maximum price: $73794.00
+ - Minimum price: $15500.00
+
+Benchmarking Data Analysis (ACF Computation):
+ - Serial ACF Compute Time: 66.44 ms
+ - CUDA ACF Compute Time: 135.48 ms
+ - OpenMP ACF Compute Time: 63.73 ms
+
+Benchmarking GARCH Model:
+ - Serial GARCH Calculation Time: 3.42 ms
+ - CUDA GARCH Calculation Time: 12.01 ms
+ - OpenMP GARCH Calculation Time: 2.73 ms
+Done Run with 4 threads
+-----------------------------------
+Running with 8 threads:
+Number of threads set to: 8
+Serial Data Collection Time: 1136.15 ms
+
+Benchmarking Compute Returns:
+ - Serial Compute Time: 9.58941 ms
+ - CUDA Compute Time: 380.118 ms
+ - OpenMP Compute Time: 8.53466 ms
+Data successfully saved to processed_data.csv.
+Details about the collected data:
+ - Total data points: 1005641
+ - Average price: $40256.26
+ - Maximum price: $73794.00
+ - Minimum price: $15500.00
+
+Benchmarking Data Analysis (ACF Computation):
+ - Serial ACF Compute Time: 66.37 ms
+ - CUDA ACF Compute Time: 136.40 ms
+ - OpenMP ACF Compute Time: 64.12 ms
+
+Benchmarking GARCH Model:
+ - Serial GARCH Calculation Time: 3.45 ms
+ - CUDA GARCH Calculation Time: 12.08 ms
+ - OpenMP GARCH Calculation Time: 2.78 ms
+Done Run with 8 threads
+-----------------------------------
+All Runs Completed.
+Clean:
+rm -f main.o DataCollection.o DataCollectionParallel.o DataAnalysis.o DataAnalysisParallel.o GARCHModel.o GARCHModelParallel.o DataCollectionCUDA.o DataAnalysisCUDA.o GARCHModelCUDA.o crypto_analysis
+Done Clean
